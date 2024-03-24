@@ -1,0 +1,130 @@
+[gd_scene load_steps=32 format=3 uid="uid://d4m26wc8r7qnj"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_4e4cr"]
+[ext_resource type="Texture2D" uid="uid://ctu1k7n037wi8" path="res://LevelDesign/Character/Jump__000.png" id="2_5y8cj"]
+[ext_resource type="Texture2D" uid="uid://cwk7834grb3py" path="res://LevelDesign/Character/Idle__000.png" id="2_i3lfp"]
+[ext_resource type="Texture2D" uid="uid://ty2lk1ttmsio" path="res://LevelDesign/Character/Idle__002.png" id="2_jktgu"]
+[ext_resource type="Texture2D" uid="uid://g0u7tbt2cscf" path="res://LevelDesign/Character/Run__007.png" id="2_lsivw"]
+[ext_resource type="Texture2D" uid="uid://cdc6h6vodnefp" path="res://LevelDesign/Character/Idle__001.png" id="3_6hu01"]
+[ext_resource type="Texture2D" uid="uid://grt1vxwgc7hl" path="res://LevelDesign/Character/Idle__003.png" id="4_x6412"]
+[ext_resource type="Texture2D" uid="uid://bi5bpku2tirdg" path="res://LevelDesign/Character/Run__001.png" id="7_xwovl"]
+[ext_resource type="Texture2D" uid="uid://cgmm2ot31d7yr" path="res://LevelDesign/Character/Run__002.png" id="8_1s6ak"]
+[ext_resource type="Texture2D" uid="uid://bir0l8p1bhiuj" path="res://LevelDesign/Character/Run__003.png" id="9_wsfea"]
+[ext_resource type="Texture2D" uid="uid://dg6p1mr7uxkvn" path="res://LevelDesign/Character/Run__004.png" id="10_spvvr"]
+[ext_resource type="Texture2D" uid="uid://qaswrj3hcyec" path="res://LevelDesign/Character/Run__005.png" id="11_7x45p"]
+[ext_resource type="Texture2D" uid="uid://bpfvjjyn6pbge" path="res://LevelDesign/Character/Run__006.png" id="12_7n1yu"]
+[ext_resource type="Texture2D" uid="uid://dojghon5vu4y7" path="res://LevelDesign/Character/Run__008.png" id="13_t5pml"]
+[ext_resource type="Texture2D" uid="uid://bg2utwxkx3ofc" path="res://LevelDesign/Character/Run__009.png" id="14_ee3p5"]
+[ext_resource type="Texture2D" uid="uid://c2d5sv1v43wfk" path="res://LevelDesign/Character/Jump__001.png" id="16_dqmd4"]
+[ext_resource type="Texture2D" uid="uid://dqbt601utqr76" path="res://LevelDesign/Character/Jump__002.png" id="17_8senc"]
+[ext_resource type="Texture2D" uid="uid://c2pan0gf2mpnr" path="res://LevelDesign/Character/Jump__003.png" id="18_axa2y"]
+[ext_resource type="Texture2D" uid="uid://bew17kj5vlokg" path="res://LevelDesign/Character/Jump__004.png" id="19_g4ldy"]
+[ext_resource type="Texture2D" uid="uid://cre4miyqjqsbn" path="res://LevelDesign/Character/Jump__005.png" id="20_d0vor"]
+[ext_resource type="Texture2D" uid="uid://ss8rvk4qlmob" path="res://LevelDesign/Character/Jump__006.png" id="21_dmk8h"]
+[ext_resource type="Texture2D" uid="uid://dr0vgapvwl17y" path="res://LevelDesign/Character/Jump__007.png" id="22_x2gtf"]
+[ext_resource type="Texture2D" uid="uid://bguxmfoalsqgn" path="res://LevelDesign/Character/Jump__008.png" id="23_f8en1"]
+[ext_resource type="Texture2D" uid="uid://dkf6buh70dqrw" path="res://LevelDesign/Character/Jump__009.png" id="24_on586"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vw8ig"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ouc4"]
+radius = 21.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_enhw6"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_8senc"), ExtResource("16_dqmd4"), ExtResource("2_5y8cj")]
+}
+
+[sub_resource type="Animation" id="Animation_lv51y"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_i3lfp"), ExtResource("3_6hu01"), ExtResource("4_x6412"), ExtResource("2_jktgu"), ExtResource("3_6hu01")]
+}
+
+[sub_resource type="Animation" id="Animation_ykhp5"]
+resource_name = "Jump"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_5y8cj"), ExtResource("16_dqmd4"), ExtResource("17_8senc"), ExtResource("18_axa2y"), ExtResource("19_g4ldy"), ExtResource("20_d0vor"), ExtResource("21_dmk8h"), ExtResource("22_x2gtf"), ExtResource("23_f8en1"), ExtResource("24_on586")]
+}
+
+[sub_resource type="Animation" id="Animation_ibptx"]
+resource_name = "Movement"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_xwovl"), ExtResource("8_1s6ak"), ExtResource("9_wsfea"), ExtResource("10_spvvr"), ExtResource("11_7x45p"), ExtResource("12_7n1yu"), ExtResource("2_lsivw"), ExtResource("13_t5pml"), ExtResource("14_ee3p5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ex8y5"]
+_data = {
+"Fall": SubResource("Animation_enhw6"),
+"Idle": SubResource("Animation_lv51y"),
+"Jump": SubResource("Animation_ykhp5"),
+"Movement": SubResource("Animation_ibptx")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4e4cr")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(45, 68)
+scale = Vector2(1.7248, -1.25665)
+shape = SubResource("CapsuleShape2D_vw8ig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 67)
+scale = Vector2(0.130094, 0.0823045)
+texture = ExtResource("16_dqmd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(45, 68)
+shape = SubResource("CapsuleShape2D_1ouc4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ex8y5")
+}

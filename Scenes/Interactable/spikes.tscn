@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bopb2aow0nwjh"]
+
+[ext_resource type="Texture2D" uid="uid://crudku70lbetw" path="res://LevelDesign/Assets/Spike.png" id="1_a1fj8"]
+[ext_resource type="Script" path="res://Scripts/Interactable/spikes.gd" id="1_adlud"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_adlud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a1fj8")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-8, 8, 8, 8, 4, -8, -5, -8)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
